@@ -26,16 +26,16 @@ const userSchema = new Schema(
     password: 
     { 
      type: String,
-     required: true,
+     required: [true, 'password is required'],
     },
     avatar:
     {
-      type: String,
+      type: String, //cloudinary url
       required: true,
     },
     coverImage:
     {
-      type: String,
+      type: String, //cloudinary url
       required: true,
     },
     refreshToken:{
@@ -48,4 +48,4 @@ const userSchema = new Schema(
     }
   }, {timestamps: true});
 
-export const Users = mongoose.model('Users', userSchema);
+export const User = mongoose.model('User', userSchema);
